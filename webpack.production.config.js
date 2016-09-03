@@ -48,7 +48,7 @@ var config = {
         screw_ie8: true
       }
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('styles/styles.css'),
     new HtmlWebpackPlugin({
       inject: true,
       hash: true,
