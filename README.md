@@ -1,4 +1,4 @@
-# Webpack Base Boilerplate
+# Webpack Base Boilerplate [![Build Status](https://secure.travis-ci.org/webpack-boilerplate-base.svg?branch=master)](http://travis-ci.org/webpack-boilerplate-base)
 
 This projects aims to simplify the frontend development using webpack.
 It handles basic things like scss compilation, js bundling and development hot reloading.
