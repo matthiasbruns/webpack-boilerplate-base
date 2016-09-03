@@ -3,6 +3,14 @@
   "version": "0.0.1",
   "description": "Webpack boilerplate base project - use this to fork for other frameworks like react, vue, etc.",
   "main": "src/main.js",
+  "homepage": "http://matthiasbruns.github.io/webpack-boilerplate-base/",
+  "bugs": {
+    "url" : "https://github.com/matthiasbruns/webpack-boilerplate-base/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/matthiasbruns/webpack-boilerplate-base.git"
+  },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
     "build-dev": "webpack",
