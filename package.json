@@ -16,7 +16,16 @@
     "build-dev": "webpack",
     "build": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
-  "author": "Matthias Bruns",
+  "author": {
+    "name" : "Matthias Bruns",
+    "url" : "https://github.com/matthiasbruns"
+  },
+  "contributors": [
+    {
+      "name" : "Tobias Kremer",
+      "url" : "https://github.com/soulchild"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.14.0",
