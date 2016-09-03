@@ -5,11 +5,11 @@
   "main": "src/main.js",
   "homepage": "http://matthiasbruns.github.io/webpack-boilerplate-base/",
   "bugs": {
-    "url" : "https://github.com/matthiasbruns/webpack-boilerplate-base/issues"
+    "url": "https://github.com/matthiasbruns/webpack-boilerplate-base/issues"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/matthiasbruns/webpack-boilerplate-base.git"
+    "type": "git",
+    "url": "https://github.com/matthiasbruns/webpack-boilerplate-base.git"
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.24.0",
