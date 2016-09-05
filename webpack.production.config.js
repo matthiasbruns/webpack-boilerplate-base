@@ -1,59 +1,34 @@
 const webpack = require('webpack')
-const path = require('path')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.base.config.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-var nodeModulesPath = path.resolve(__dirname, 'node_modules')
-var buildPath = path.resolve(__dirname, '.build')
-var mainPath = path.resolve(__dirname, 'src', 'main.js')
+const environment = process.env.NODE_ENV || 'development'
+const packageVersion = require('./package.json').version
 
-var config = {
+module.exports = merge(baseConfig, {
   devtool: 'source-map',
-  entry: mainPath,
-  output: {
-    path: buildPath,
-    filename: '[name].[hash].js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.(css|scss|sass)?$/,
-        loader: ExtractTextPlugin.extract(
-          'style', // fallback
-          'css!sass' // css & sass loading
-        )
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
-        loader: 'file',
-        query: {
-          name: 'img/[name].[hash:7].[ext]'
-        }
-      }
-    ]
-  },
+
   plugins: [
+    // Search for equal or similar files and deduplicate them
+    new webpack.optimize.DedupePlugin(),
+
+    // Minimize all JavaScript output of chunks
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
         screw_ie8: true
       }
     }),
-    new ExtractTextPlugin('styles/styles.css'),
+
+    // Generates a solid base html page for your web application
+    // with all your webpack generated css and js files built in
     new HtmlWebpackPlugin({
       inject: true,
-      hash: true,
       template: 'index.html',
       filename: 'index.html',
+      environment,
+      packageVersion,
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -63,6 +38,4 @@ var config = {
       }
     })
   ]
-}
-
-module.exports = config
+})

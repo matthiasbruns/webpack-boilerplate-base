@@ -12,18 +12,18 @@
     "url": "https://github.com/matthiasbruns/webpack-boilerplate-base.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --no-info --inline --hot --colors",
     "build-dev": "webpack",
-    "build": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "build": "rm -rf dist && NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "author": {
-    "name" : "Matthias Bruns",
-    "url" : "https://github.com/matthiasbruns"
+    "name": "Matthias Bruns",
+    "url": "https://github.com/matthiasbruns"
   },
   "contributors": [
     {
-      "name" : "Tobias Kremer",
-      "url" : "https://github.com/soulchild"
+      "name": "Tobias Kremer",
+      "url": "https://github.com/soulchild"
     }
   ],
   "license": "ISC",
@@ -35,18 +35,26 @@
     "babel-preset-stage-0": "^6.5.0",
     "compass": "^0.1.1",
     "css-loader": "^0.24.0",
+    "eslint": "^3.4.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-friendly-formatter": "^2.0.6",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",
     "sass-loader": "^4.0.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-merge": "^0.14.1"
   },
   "dependencies": {
-    "babel-polyfill": "^6.13.0",
-    "jquery": "^3.1.0"
+    "babel-polyfill": "^6.13.0"
   }
 }
