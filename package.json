@@ -12,7 +12,7 @@
     "url": "https://github.com/matthiasbruns/webpack-boilerplate-base.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.config.js --no-info --inline --hot --colors",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --no-info --inline --hot --watch --colors",
     "build-dev": "webpack",
     "build": "rm -rf dist && NODE_ENV=production webpack -p --config webpack.production.config.js"
   },

@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const srcPath = path.resolve(__dirname, 'src')
@@ -8,7 +7,6 @@ const buildPath = path.resolve(__dirname, 'dist')
 const mainAppPath = path.resolve(srcPath, 'main.js')
 
 const environment = process.env.NODE_ENV || 'development'
-const packageVersion = require('./package.json').version
 
 const FILENAME_TEMPLATE = '[name].[hash:7].[ext]'
 
@@ -55,7 +53,8 @@ module.exports = {
         test: /\.(html)?$/,
         loader: 'html',
         query: {
-          attrs: ['img:src', 'link:href']
+          attrs: ['img:src', 'link:href'],
+          root: path.resolve(__dirname, 'src')
         }
       },
       // SASS/CSS
@@ -103,16 +102,6 @@ module.exports = {
   plugins: [
     // Extract inlined CSS into dedicated output file
     new ExtractTextPlugin('assets/styles/[name].[contenthash:7].css'),
-
-    // Generates a solid base html page for your web application
-    // with all your webpack generated css and js files built in
-    new HtmlWebpackPlugin({
-      // inject: true,
-      template: 'index.html',
-      filename: 'index.html',
-      environment,
-      packageVersion
-    }),
 
     // Create global constants which can be configured at compile time
     new webpack.DefinePlugin({

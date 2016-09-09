@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const environment = process.env.NODE_ENV || 'development'
 const packageVersion = require('./package.json').version
 
-module.exports = merge(baseConfig, {
+const mergedConfig = merge(baseConfig, {
   devtool: 'source-map',
 
   plugins: [
@@ -39,3 +39,5 @@ module.exports = merge(baseConfig, {
     })
   ]
 })
+
+module.exports = mergedConfig

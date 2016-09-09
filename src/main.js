@@ -6,4 +6,4 @@ import 'babel-polyfill'
 // SCSS reference - will be compiled by webpack
 import 'assets/stylesheets/main.scss'
 
-console.log('test')
+import '../index.html'
