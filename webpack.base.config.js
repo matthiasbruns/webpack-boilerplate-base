@@ -18,7 +18,8 @@ module.exports = {
   output: {
     path: buildPath,  // output directory
     filename: 'assets/js/[name].[hash].js',
-    chunkFilename: 'assets/js/[id].[hash].js'
+    chunkFilename: 'assets/js/[id].[hash].js',
+    publicPath: '/'
   },
 
   resolve: {
