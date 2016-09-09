@@ -3,9 +3,6 @@ const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const environment = process.env.NODE_ENV || 'development'
-const packageVersion = require('./package.json').version
-
 const mergedConfig = merge(baseConfig, {
   devtool: 'source-map',
 
@@ -27,8 +24,6 @@ const mergedConfig = merge(baseConfig, {
       inject: true,
       template: 'index.html',
       filename: 'index.html',
-      environment,
-      packageVersion,
       minify: {
         collapseWhitespace: true,
         removeComments: true,

@@ -3,9 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./webpack.base.config.js')
 
-const environment = process.env.NODE_ENV || 'development'
-const packageVersion = require('./package.json').version
-
 module.exports = merge(baseConfig, {
   cache: true,      // Cache generated modules and chunks to improve performance
   debug: true,      // Switch loaders to debug module
@@ -30,8 +27,6 @@ module.exports = merge(baseConfig, {
       inject: true,           // inject assets into template
       template: 'index.html',
       filename: 'index.html',
-      environment,
-      packageVersion
     })
   ]
 })

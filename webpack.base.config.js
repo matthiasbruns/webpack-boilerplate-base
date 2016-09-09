@@ -105,7 +105,9 @@ module.exports = {
 
     // Create global constants which can be configured at compile time
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': environment
+      'process.env': {
+        'NODE_ENV': '"' + environment + '"'
+      }
     })
   ],
 
