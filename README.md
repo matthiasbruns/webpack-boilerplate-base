@@ -2,46 +2,48 @@
 
 [![Build Status](https://travis-ci.org/matthiasbruns/webpack-boilerplate-base.svg?branch=master)](https://travis-ci.org/matthiasbruns/webpack-boilerplate-base)
 
-This projects aims to simplify the frontend development using webpack.
-It handles basic things like scss compilation, js bundling and development hot reloading.
+> This projects aims to simplify frontend development using webpack. It handles basic things like scss compilation, js bundling and development hot reloading.
 
 ## Getting Started
 
 ### Development
 
-````npm run dev````
+Run development server with **webpack-dev-server**:
 
-Run development server with **webpack-dev-server**
+````npm run dev````
 
 ### Production
 
-````npm run build````
+Build for production. The default production build folder is `dist`:
 
-Build for production - the default production build folder is **.build**
+````npm run build````
 
 ## Structure
 
-````index.html```` will be used as the html template by webpack
+`index.html` Entrypoint HTML template
 
-````.build/```` this folder is the production build target
+`dist` Production build target
 
-````src/```` this folder contains the application source code
+`src` Application source
 
 ## Webpack
 
 ### Configurations
 
-````webpack.config.js```` Development config
+`webpack.config.js` Base config for development and production
 
-````webpack.production.config.js```` Production config
+`webpack.dev.config.js` Config overrides/enhancements for development
+
+`webpack.production.config.js` Config overrides/enhancements for production
 
 ### Loaders
 
 * **babel**
-* **style**
 * **css**
-* **json**
 * **file**
+* **html**
+* **json**
+* **style**
 
 ### Plugins
 
